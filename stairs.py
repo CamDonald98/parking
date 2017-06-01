@@ -21,11 +21,13 @@ class Stairs(pygame.sprite.Sprite):
         self.oid = Stairs.oid
         Stairs.oid += 1
         self.world = world
-        self.image = pygame.Surface((100, 30))
-        self.image.fill(opt.GRAY)
-        self.image = self.image.convert()
+        self.image = pygame.image.load("img/stairs-0.png")
+        self.image = self.image.convert_alpha()
+        #self.image = pygame.transform.scale(self.image,(100,200))
         self.rect = self.image.get_rect()
         self.pos = Vector(pos)
+
+        ##get_windows_size --> larghezza altezza 
 
     def update(self):
         self.rect.center = self.pos
